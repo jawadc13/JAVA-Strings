@@ -1,3 +1,4 @@
+package maven_jawad;
 import java.util.Scanner;
 import java.lang.*;
 
@@ -47,14 +48,72 @@ public class Palindrome {
 			}
 		}
 		
-		if(lettercount == firstmodified.length())
+		if(input == "")
+		{
+			System.out.println("Your sentence is NOT a Palindrome! especially since you didn't say anything");
+		}
+		else if(lettercount == firstmodified.length())
 		{
 			System.out.println("Your sentence is a Palindrome!(ignoring special characters and spaces~)");
 		}
+		
 		else
 		{
 			System.out.println("Your sentence is NOT a Palindrome!");
 		}
 	}
 
+	//I realized that this isn't the best practice but next time i'll plan to use methods in my code
+	
+	public static int palindromecheck(String input)
+	{
+		StringBuilder str = new StringBuilder(input);
+		StringBuilder reverse = str.reverse();
+		
+
+		
+		String firstmodified = input;
+		firstmodified = firstmodified.replaceAll("[^a-zA-Z]","");
+		
+		
+		String lastmodified = reverse.toString();
+		lastmodified = lastmodified.replaceAll("[^a-zA-Z]","");
+		
+		int lettercount = 0;
+		
+		for(int i = 0; i < firstmodified.length(); i++)
+		{
+			char letter1 = firstmodified.charAt(i);
+			char letter2 = lastmodified.charAt(i);
+			
+			if(letter1 != letter2)
+			{
+				break;
+				
+			}
+			else
+			{
+				lettercount++;
+			}
+		}
+		
+		if(input == "")
+		{
+			return 0;
+		}
+		else if(lettercount == firstmodified.length())
+		{
+			return 1;
+		}
+		else
+		{
+			return 0;
+		}
+	}
+	
+	
+	
+	
+	
+	
 }

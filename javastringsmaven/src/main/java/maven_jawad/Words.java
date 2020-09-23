@@ -1,3 +1,4 @@
+package maven_jawad;
 import java.util.Scanner;
 import java.util.StringTokenizer;
 
@@ -17,5 +18,17 @@ public class Words {
 		System.out.println("Number of words: " + tokens.countTokens());
 		
 	}
+	
+	
+	public static int wordcheck(String input){
+		
+		
+		StringTokenizer tokens = new StringTokenizer(input);
+		
+			return tokens.countTokens();
+	}
 
 }
+
+
+

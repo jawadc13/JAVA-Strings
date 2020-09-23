@@ -1,8 +1,14 @@
+package maven_jawad;
 import java.util.*;
 
 
 public class Vowels {
 
+	
+
+	
+	
+	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
@@ -33,5 +39,30 @@ public class Vowels {
 		System.out.println("Number of vowels: " + vowelsct);
 		
 	}
+
+
+
+public static int vowelcheck(String input){
+	int results;
+	int vowelsct = 0;
+	
+	char[] voweltype = {'a','e','i','o','u','A','E','I','O','U'};
+	for(int i = 0; i< input.length(); i++)
+	{
+		for(int j = 0; j < 10; j++)
+		{
+			char letter = input.charAt(i);
+			
+			
+			if(letter == voweltype[j])
+			{
+				vowelsct++;
+				continue;
+			}
+		}
+	}
+	
+		return vowelsct;
+}
 
 }

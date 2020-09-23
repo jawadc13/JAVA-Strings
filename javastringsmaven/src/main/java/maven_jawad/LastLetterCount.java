@@ -1,3 +1,4 @@
+package maven_jawad;
 import java.util.Scanner;
 
 public class LastLetterCount {
@@ -71,5 +72,42 @@ public class LastLetterCount {
 		System.out.println("Number of last letters containing s: " + endings +"and last letters containing y: " + endingy);
 		
 	}
-
+	public static int lastlettercountcheck(String input)
+	{
+		int endings = 0;
+		int endingy = 0;
+		char[] keywords = {'S','s'};
+		char[] keywordy = {'Y','y'};
+		
+	input = input.toLowerCase();
+	int[] arrays = new int[input.length() + 1];
+	int[] arrayy = new int[input.length() + 1];
+	String strarray[] = input.split(" ");
+	
+	
+	for(int i = 0; i < input.length(); i++)
+	{
+		char letter = input.charAt(i);
+		
+		if(letter == 's' )
+		{
+			endings++;
+			arrays[i] = 1;
+			continue;
+		}
+		if(letter == 'y')
+		{
+			endingy++;
+			arrayy[i] = 1;
+			continue;
+		}
+	
+		
+	}
+	
+	int total = endings + endingy;
+	
+	return total;
+	
+	}
 }
